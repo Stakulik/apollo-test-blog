@@ -12,9 +12,12 @@
   "dependencies": {
     "apollo-server": "^3.0.0",
     "graphql": "^15.5.1",
-    "moment": "2.29.1"
+    "moment": "2.29.1",
+    "pg": "8.7.3",
+    "sequelize": "6.19.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "sequelize-cli": "^6.4.1"
   }
 }
