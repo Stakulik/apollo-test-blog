@@ -1,13 +1,13 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Test app for Apollo GraphQL and Sequelize",
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "https://github.com/Stakulik",
   "license": "ISC",
   "dependencies": {
     "apollo-server": "^3.0.0",
