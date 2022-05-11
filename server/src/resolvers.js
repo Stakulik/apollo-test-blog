@@ -18,6 +18,18 @@ const resolvers = {
       return models.Post.findByPk(id);
     }
   },
+
+  Mutation: {
+    async createPost(_, {title, body, authorId, publishedAt}, {models}) {
+      return models.Post.create({
+        title,
+        body,
+        userId: authorId,
+        publishedAt
+     });
+    }
+  },
+
   Post: {
     author: (post) => {
       return post.getUser();

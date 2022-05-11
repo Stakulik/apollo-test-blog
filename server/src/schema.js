@@ -8,6 +8,10 @@ const typeDefs = gql`
     post(id: ID!): Post!
   }
 
+  type Mutation {
+    createPost(title: String!, body: String!, authorId: Int!, publishedAt: String): Post!
+  }
+
   type Post {
     id: ID!
     title: String!
