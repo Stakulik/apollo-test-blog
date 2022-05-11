@@ -3,35 +3,29 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class User extends Model {
+  class Comment extends Model {
     static associate(models) {
-      User.hasMany(models.Post, {
-        foreignKey: 'userId',
-        onDelete: 'CASCADE',
-      });
-      User.hasMany(models.Comment, {
-        foreignKey: 'userId',
-        onDelete: 'CASCADE',
-      });
+      Comment.belongsTo(models.User, {as: 'user'});
     }
   }
-  User.init({
-    nickname: {
-      type: DataTypes.STRING,
+  Comment.init({
+    body: {
+      type: DataTypes.TEXT,
       allowNull:false,
       validate: {
         notNull: true
       }
     },
-    email: {
-      type: DataTypes.STRING,
+    userId: {
+      type: DataTypes.INTEGER,
       allowNull:false,
       validate: {
         notNull: true
       }
     },
-    password: {
-      type: DataTypes.STRING,
+    published_at: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
       allowNull:false,
       validate: {
         notNull: true
@@ -55,7 +49,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     sequelize,
-    modelName: 'User',
+    modelName: 'Comment',
   });
-  return User;
+  return Comment;
 };

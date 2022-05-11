@@ -1,4 +1,5 @@
 [
   "20220510085220-create-user.js",
-  "20220511084921-create-post.js"
+  "20220511084921-create-post.js",
+  "20220511142525-create-comment.js"
 ]
