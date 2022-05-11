@@ -14,6 +14,9 @@ const resolvers = {
         ]
       })
     },
+    post: (_, {id}, {models}) => {
+      return models.Post.findByPk(id);
+    }
   },
   Post: {
     author: (post) => {
